@@ -1,0 +1,12 @@
+# Your API key lives here. Never commit it.
+.env
+
+# Files the lab writes
+output/*
+!output/.gitkeep
+
+# Python housekeeping
+__pycache__/
+*.pyc
+.venv/
+venv/
