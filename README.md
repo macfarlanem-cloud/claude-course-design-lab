@@ -6,6 +6,8 @@ In about 90 minutes you will build a small, real assistant that reads a syllabus
 
 You do not need to know Python. You need to be able to open a terminal, copy commands, and be curious about what happens when you change things.
 
+Want the big picture before the steps? Read [How This Lab Works](HOW_IT_WORKS.md), one page with a diagram of the loop that everything here is built on.
+
 ## What you will be able to do
 
 By the end of this lab you will be able to:
@@ -206,6 +208,8 @@ Conventions you may notice: no em dashes anywhere, plain language over jargon, l
 | `materials/` | Sample syllabus and learner profile (replace with yours) |
 | `skills/humanizing-course-design/SKILL.md` | The Skill |
 | `QUICK_REFERENCE.md` | One-page summary of the commands and concepts |
+| `HOW_IT_WORKS.md` | One-page explanation of what is actually happening and why the lab is built this way |
+| `docs/` | The tool-use loop diagram (SVG and PNG), free to reuse in slides or videos |
 
 ## License
 
