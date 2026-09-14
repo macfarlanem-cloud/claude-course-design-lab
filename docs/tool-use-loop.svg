@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">The tool-use loop</title>
+  <desc id="desc">Your script describes a tool to Claude. Claude replies with a request to use it. Your script runs the function and sends back the result. Claude reads the result and writes its answer. Claude never touches your files; your code decides.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1A1A1A"/>
+    </marker>
+    <marker id="arrowAccent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#A6192E"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#FFFFFF"/>
+
+  <!-- Title -->
+  <text x="80" y="78" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#1A1A1A">The tool-use loop</text>
+  <text x="80" y="118" font-family="Helvetica, Arial, sans-serif" font-size="24" fill="#4D4D4D">Claude asks. Your code decides.</text>
+
+  <!-- Left box: your computer -->
+  <rect x="80" y="180" width="440" height="560" rx="14" fill="#F2F2F2" stroke="#D9D9D9" stroke-width="2"/>
+  <rect x="80" y="180" width="440" height="6" fill="#A6192E"/>
+  <text x="110" y="240" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1A1A1A">Your computer</text>
+  <text x="110" y="272" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#4D4D4D">your script, written in Python</text>
+  <line x1="110" y1="296" x2="490" y2="296" stroke="#D9D9D9" stroke-width="2"/>
+
+  <g font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#1A1A1A">
+    <text x="110" y="340" font-weight="bold">read_file</text>
+    <text x="110" y="366" fill="#4D4D4D">a small function you wrote</text>
+
+    <text x="110" y="416" font-weight="bold">a guardrail</text>
+    <text x="110" y="442" fill="#4D4D4D">reads only inside this folder</text>
+
+    <text x="110" y="492" font-weight="bold">materials/</text>
+    <text x="110" y="518" fill="#4D4D4D">the syllabus and learner profile</text>
+
+    <text x="110" y="568" font-weight="bold">.env</text>
+    <text x="110" y="594" fill="#4D4D4D">your key, used to open the connection</text>
+
+    <text x="110" y="644" font-weight="bold">SKILL.md</text>
+    <text x="110" y="670" fill="#4D4D4D">your teaching philosophy, sent as the</text>
+    <text x="110" y="696" fill="#4D4D4D">job description (Step 3)</text>
+  </g>
+
+  <!-- Right box: Claude -->
+  <rect x="1080" y="180" width="440" height="560" rx="14" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="2"/>
+  <rect x="1080" y="180" width="440" height="6" fill="#1A1A1A"/>
+  <text x="1110" y="240" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1A1A1A">Claude</text>
+  <text x="1110" y="272" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#4D4D4D">reached through the API</text>
+  <line x1="1110" y1="296" x2="1490" y2="296" stroke="#D9D9D9" stroke-width="2"/>
+
+  <g font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#1A1A1A">
+    <text x="1110" y="340" font-weight="bold">reads the job description</text>
+    <text x="1110" y="366" fill="#4D4D4D">the system prompt, plus any Skill</text>
+
+    <text x="1110" y="416" font-weight="bold">reads the tool description</text>
+    <text x="1110" y="442" fill="#4D4D4D">name, what it does, what it needs</text>
+
+    <text x="1110" y="492" font-weight="bold">decides when it needs the tool</text>
+    <text x="1110" y="518" fill="#4D4D4D">and asks, instead of guessing</text>
+
+    <text x="1110" y="568" font-weight="bold">cannot open, send, or post</text>
+    <text x="1110" y="594" fill="#4D4D4D">anything by itself</text>
+
+    <text x="1110" y="644" font-weight="bold">writes the answer</text>
+    <text x="1110" y="670" fill="#4D4D4D">once it has what it asked for</text>
+  </g>
+
+  <!-- Arrow 1: left to right -->
+  <line x1="540" y1="330" x2="1050" y2="330" stroke="#1A1A1A" stroke-width="3" marker-end="url(#arrow)"/>
+  <circle cx="570" cy="330" r="20" fill="#A6192E"/>
+  <text x="570" y="338" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">1</text>
+  <text x="810" y="304" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#1A1A1A">Your script sends the request and describes the tool:</text>
+  <text x="810" y="362" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#4D4D4D">"read_file reads a file from the project folder"</text>
+
+  <!-- Arrow 2: right to left (accent: this is the key moment) -->
+  <line x1="1060" y1="450" x2="550" y2="450" stroke="#A6192E" stroke-width="3" marker-end="url(#arrowAccent)"/>
+  <circle cx="1030" cy="450" r="20" fill="#A6192E"/>
+  <text x="1030" y="458" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">2</text>
+  <text x="800" y="424" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#1A1A1A">Claude replies with a request, not an answer:</text>
+  <text x="800" y="482" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#A6192E" font-weight="bold">"please run read_file on materials/sample_syllabus.md"</text>
+
+  <!-- Arrow 3: left to right -->
+  <line x1="540" y1="570" x2="1050" y2="570" stroke="#1A1A1A" stroke-width="3" marker-end="url(#arrow)"/>
+  <circle cx="570" cy="570" r="20" fill="#A6192E"/>
+  <text x="570" y="578" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">3</text>
+  <text x="810" y="544" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#1A1A1A">Your script runs the function and sends back the result:</text>
+  <text x="810" y="602" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#4D4D4D">the contents of the syllabus</text>
+
+  <!-- Arrow 4: right to left -->
+  <line x1="1060" y1="690" x2="550" y2="690" stroke="#1A1A1A" stroke-width="3" marker-end="url(#arrow)"/>
+  <circle cx="1030" cy="690" r="20" fill="#A6192E"/>
+  <text x="1030" y="698" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">4</text>
+  <text x="800" y="664" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#1A1A1A">Claude reads the result and writes its real answer.</text>
+  <text x="800" y="722" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#4D4D4D">If it needs another tool, the loop runs again.</text>
+
+  <!-- Bottom note -->
+  <rect x="80" y="780" width="1440" height="80" rx="10" fill="#FFFFFF" stroke="#A6192E" stroke-width="2"/>
+  <text x="800" y="814" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1A1A">Claude never touches your files. Your script does, and only what you wrote.</text>
+  <text x="800" y="844" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#4D4D4D">When you hear "agents" or "MCP," this loop is what is underneath. Step 5 adds a second tool that writes to Canvas, unpublished, so a person still decides.</text>
+</svg>
